@@ -1,0 +1,581 @@
+
+:root{
+    --main-color:#ffffff;
+    --black-color:#13587b;
+    --border: 0.1rem soild rgba(255, 255, 255, 0.084);
+}
+/*! base html codes*/
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color:var(--main-color);
+    height: 200vh;
+}
+section{
+    padding: 3.5rem 7%;
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 2rem 3.75rem;
+    border-radius: 30rem;
+    font-size: 1.7rem;
+    color: #f9fbfc;
+    background-color: var(--black-color);
+    cursor: pointer;
+    align-items: center;
+
+}
+/*! header start*/
+
+.logo img {
+    height: 10rem;
+}
+/* Genel Header Stil */
+.header {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    margin: 2rem 7%;
+    border-radius: 0rem;
+    box-shadow: 0px 0px 17px -2px rgba(0,0,0,0.75);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navbar Link Stil */
+.header .navbar a {
+    margin: 0.1rem;
+    font-size: 5rem;
+    color: #011e7bc6;
+    border-bottom: 0.1rem solid transparent;
+}
+
+/* Aktif ve Hover Durumları */
+.header .navbar .active,
+.header .navbar a:hover {
+    border: color #000;
+    padding-bottom: 0.5rem;
+}
+
+/* Navbar Stil */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 15px 0;
+    z-index: 100;
+    width: 100%;
+}
+
+/* Navbar Konteyneri */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo Stil */
+.logo {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Navbar Bağlantı Linkleri Stil */
+.navbar-links {
+    display: flex;
+
+    list-style-type: none;
+    color: #000000;
+}
+
+/* Navbar Bağlantı Ögeleri */
+.navbar-links li {
+    margin-left: 20px;
+    color: #000000;
+}
+
+/* Navbar Bağlantı Linkleri Stil */
+.navbar-links a {
+    color: #fff;
+    text-decoration:none;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+
+/* Navbar Link Hover Stil */
+.navbar-links a:hover {
+    color: #000000;
+    border-radius: 5px;
+}
+
+/* Mobil Stiller */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 10px; /* Küçük ekranlar için padding azaltıldı */
+    }
+
+    .navbar-links {
+        flex-direction:column; /* Linkler dikey sıralandı */
+        align-items: flex-start;
+        width: 100%; /* Tüm genişliği kaplaması sağlandı */
+    }
+
+    .navbar-links li {
+        margin-left: 0; /* Dikey hizalama için soldan boşluk kaldırıldı */
+        margin-top: 10px; /* Ögeler arasına boşluk eklendi */
+    }
+
+    .navbar-links a {
+        font-size: 1.4rem; /* Mobilde font boyutu küçültüldü */
+        padding: 8px 12px; /* Mobilde padding azaltıldı */
+        width: 100%; /* Linkler tam genişlikte olacak şekilde ayarlandı */
+        text-align: center; /* Link metni ortalanarak hizalandı */
+    }
+
+    .logo {
+        font-size: 24px; /* Mobilde logo boyutu küçültüldü */
+    }
+}
+
+/* Slider */
+/* Slider Konteyneri */
+.slider-container {
+    margin-top: 15px;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Slider */
+/* Slider Konteyneri */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 500px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Slayt içeriği */
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:#ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.slide-content h2 {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 10px;
+}
+
+.slide-content p {
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Manuel butonlar */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/*!girisstart*/
+/* Kartların dış yapısı */
+.cards-container {
+    display: flex; /* Kartları yan yana yerleştirir */
+    justify-content: space-between; /* Kartlar arasında eşit boşluk bırakır */
+    gap: 20px; /* Kartlar arasındaki boşluk */
+    padding: 20px;
+  }
+  
+.cards {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgb(255, 255, 255); /* Tıklama sonrası arka plan için */
+  }
+  
+  .cards:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Arka plan resmi */
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease;
+  }
+  
+  .cards:hover .card-background {
+    opacity: 0; /* İmleç geldiğinde arka plan resmi kaybolur */
+  }
+  
+  /* Kartın içeriği */
+  .card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    z-index: 2;
+    transition: color 0.5s ease, opacity 0.5s ease;
+  }
+  .card-content h2{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .cards:hover .card-content h2 {
+    display: none; /* Başlık gizlenir */
+  }
+  
+  .cards:hover .card-content p {
+    display: block; /* Açıklama paragrafı görünür */
+    color: black; /* Siyah yazı */
+    font-size: 14px;
+    opacity: 1; /* Görünürlük efekti */
+  }
+  
+  /* Açıklama paragrafı başlangıçta gizli */
+  .card-content p {
+    display: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 0;
+  }
+  
+  /*!girisend*/
+  
+/*!infostart*/
+
+.bilgi-card p{
+    color: #000000;
+    font-size: 18px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+/*!infoend*/
+
+/*!hizmetlerimiz start*/
+
+/* Kartları kapsayan container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Kartların stilleri */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(53, 0, 0, 0.2);
+    background-color: #ffffff;
+}
+
+/* Kart başlıkları */
+.card h3 {
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+    color:#000000;
+}
+
+/* Kart açıklamaları */
+.card p {
+    font-size:14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+    color:#000000;
+}
+
+
+/* Container'daki hizalamayı korumak için */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 sütunlu düzen */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20 auto;
+}
+
+/* Kartlar hizalı */
+
+/*!hakkımızda*/
+h3{
+    text-align: center;
+    color: #000000;
+    font-size: 18px;
+}
+
+.details-card {
+    font-size: 18px;
+    color: #000000;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.details-card strong {
+    font-size: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+}
+/* Container'daki hizalamayı korumak için */
+
+/*!hizmetlerimizend*/
+
+/*!iletişimstart*/
+
+/* İletişim Kartları */
+.contact-cards {
+    display: flex;
+    justify-content: space-between; /* Kartları yan yana yerleştirir */
+    gap: 20px; /* Kartlar arasında boşluk */
+    margin: 20px 0;
+}
+
+/* E-posta ve Adres Bilgileri Kartı */
+.contact-info-card {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 50%; /* Kart genişliği */
+    max-width: 500px; /* Maksimum genişlik */
+    font-size: 1.2em;
+    color:#000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 150px; /* Yüksekliği kısaltma */
+    overflow: hidden; /* İçerik taşarsa gizle */
+    margin-top: 70px; /* Üstten boşluk ekledik */
+}
+
+/* Google Harita Kartı */
+.contact-map-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%; /* Kart genişliği */
+    max-width: 600px; /* Maksimum genişlik */
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 200px; /* Yüksekliği kısaltma */
+}
+
+/* E-posta ve Adres Bilgileri Kartı - Simge Stili */
+.contact-info-card .icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+/*!iletişimend*/
+
+/* Başlıkların Ortak Stili */
+/* Başlıkların Ortak Stili */
+.section-title {
+    font-size: 2.5em;               /* Başlık boyutu */
+    color:#021047;                 /* Başlık rengi */
+    text-align: center;             /* Ortalanmış başlık */
+    position: relative;             /* Konum için referans */
+    margin: 10px 0;                 /* Başlıklar arası boşluk */
+    font-weight: bold;              /* Kalın yazı tipi */
+    overflow: visible;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Başlıkların Etrafında Çizgi */
+.section-title::before,
+.section-title::after {
+    content: "";                    /* İçerik boş olacak, çizgi için */
+    position: absolute;
+    top: 50%;                        /* Çizgiyi başlığın ortasına yerleştir */
+    width: 30%;                      /* Çizgilerin uzunluğu */
+    height: 3px;                     /* Çizgilerin kalınlığı */
+    background-color: #091d5cc6;       /* Çizgi rengi */
+}
+
+/* Sol Çizgi */
+.section-title::before {
+    left: 0;
+}
+
+/* Sağ Çizgi */
+.section-title::after {
+    right: 0;
+}
+
+/* Mobil Stiller */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2em; /* Başlık boyutunu küçült */
+        margin: 8px 0; /* Başlıklar arası boşluğu azalt */
+    }
+
+    .section-title::before,
+    .section-title::after {
+        width: 15%; /* Çizgilerin uzunluğunu mobilde küçült */
+    }
+}
+
+/*!enanlttümhaklarımızsaklıdır*/
+.footer {
+    text-align: center;                /* Yazıyı ortalar */
+    padding: 1rem 0;                   /* Üst ve alt boşluk ekler */
+    background-color: #ffffff;            /* Arka plan rengi */
+    color:#000000;                       /* Yazı rengi */
+    font-size: 1.6rem;                 /* Yazı boyutu */
+    position: relative;                   /* Sayfanın altına sabitler */
+    bottom: 0;                         /* Sayfanın en altına yerleştirir */
+    width: 100%;                       /* Sayfanın tamamını kaplar */
+    z-index: 1000; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;                    /* Diğer içeriklerin üstünde gösterir */
+}
+
+/* Yazı üzerine fare ile gelindiğinde stil değişikliği (isteğe bağlı) */
+.footer p:hover {
+    opacity: 0.8;                      /* Opaklığı azaltarak yazıyı vurgular */
+}
+/*!footerend*/
+
+/* Küçük ekranlar (mobil) için */
+@media screen and (max-width: 576px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header .navbar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .logo img {
+        height: 8rem;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* Tek sütun */
+    }
+
+    .contact-cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Orta ekranlar (tablet) için */
+@media screen and (max-width: 768px) {
+    .header .navbar a {
+        font-size: 1.4rem;
+    }
+
+    .cards-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* İki sütun */
+    }
+}
+
+/* Büyük ekranlar (masaüstü) için */
+@media screen and (min-width: 769px) {
+    .header .navbar a {
+        font-size: 1.6rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 1fr); /* Üç sütun */
+    }
+
+    .cards-container {
+        justify-content: space-between;
+    }
+}
